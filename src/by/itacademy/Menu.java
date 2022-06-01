@@ -4,6 +4,15 @@ import java.util.Scanner;
 
 public class Menu {
 
+    public static void startProgramme(Scanner scanner){
+        System.out.print("Please, enter X: ");
+        double x = Calculator.getNumber(scanner);
+        System.out.print("Please, enter Y: ");
+        double y = Calculator.getNumber(scanner);
+        char operator = Calculator.getOperator(scanner);
+        Calculator.calculateResult(operator, x, y);
+    }
+
     public static int askFurtherAction(Scanner sc) {
         int action;
         do {
@@ -19,12 +28,7 @@ public class Menu {
     }
 
     public static int continueProgramme(Scanner scanner){
-        System.out.print("Please, enter X: ");
-        double x = Calculator.getNumber(scanner);
-        System.out.print("Please, enter Y: ");
-        double y = Calculator.getNumber(scanner);
-        char operator = Calculator.getOperator(scanner);
-        Calculator.calculateResult(operator, x, y);
+        Menu.startProgramme(scanner);
         return Menu.askFurtherAction(scanner);
     }
 }
