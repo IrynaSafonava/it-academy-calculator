@@ -3,16 +3,14 @@ package by.itacademy;
 import java.util.Scanner;
 
 public class Menu {
-
     public static void startProgramme(Scanner scanner){
         System.out.print("Please, enter X: ");
-        double x = Calculator.getNumber(scanner);
+        double x = InputReader.getNumber(scanner);
         System.out.print("Please, enter Y: ");
-        double y = Calculator.getNumber(scanner);
-        char operator = Calculator.getOperator(scanner);
+        double y = InputReader.getNumber(scanner);
+        char operator = InputReader.getOperator(scanner);
         Calculator.calculateResult(operator, x, y);
     }
-
     public static int askFurtherAction(Scanner sc) {
         int action;
         do {
@@ -26,7 +24,6 @@ public class Menu {
         } while (action != 0 & action != 1);
         return action;
     }
-
     public static int continueProgramme(Scanner scanner){
         Menu.startProgramme(scanner);
         return Menu.askFurtherAction(scanner);

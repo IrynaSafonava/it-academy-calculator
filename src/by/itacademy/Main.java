@@ -13,14 +13,12 @@ public class Main {
 
         while (action >= 0) {
             switch (action) {
-                case 0:
+                case 0 -> {
                     System.out.println("Closing the programme. Bye-Bye!");
                     scanner.close();
                     action = -1;
-                    break;
-                case 1:
-                    action = Menu.continueProgramme(scanner);
-                    break;
+                }
+                case 1 -> action = Menu.continueProgramme(scanner);
             }
         }
     }
